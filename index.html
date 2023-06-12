@@ -3,27 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beat COVID!</title>
+    <title>Let's Beat COVID!</title>
+    <link rel="stylesheet" href="./index.css" />
     <script>
+      var count = 0; // Global variable to store the click count
+
       function countClicks() {
         // Get the counter element
         var counter = document.getElementById("counter");
+        var defaultText = document.getElementById("default-text");
 
-        // Get the current count
-        var count = parseInt(counter.innerText);
+        // If this is the first click, hide the default text
+        if (count === 0) {
+          defaultText.style.display = "none";
+        }
 
         // Increment the count by 1
         count++;
 
         // Update the counter element with the new count
-        counter.innerText = count;
+        counter.innerText = "You have beaten COVID " + count + " times!";
+      }
+
+      function handleKeyPress(event) {
+        // Check if the pressed key is Space (32) or Enter (13)
+        if (event.keyCode === 32 || event.keyCode === 13) {
+          countClicks();
+        }
       }
     </script>
   </head>
   <body>
-    hello world
-    <button onclick="countClicks()">Beat COVID</button>
-    <p>You have beaten COVID <span id="counter">0</span></p>
-    <p>times!</p>
+    <img src="./Images/testB/b1SmokeCool.png" alt="Image1" />
+    <button autofocus onclick="countClicks()">BEAT COVID</button>
+
+    <p id="default-text">Let's beat COVID! Hit Space or Enter.</p>
+
+    <p id="counter"></p>
   </body>
 </html>

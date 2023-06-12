@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beat COVID!</title>
+    <script>
+      function countClicks() {
+        // Get the counter element
+        var counter = document.getElementById("counter");
+
+        // Get the current count
+        var count = parseInt(counter.innerText);
+
+        // Increment the count by 1
+        count++;
+
+        // Update the counter element with the new count
+        counter.innerText = count;
+      }
+    </script>
   </head>
   <body>
     hello world
-    <button>Beat COVID</button>
+    <button onclick="countClicks()">Beat COVID</button>
+    <p>You have beaten COVID <span id="counter">0</span></p>
+    <p>times!</p>
   </body>
 </html>

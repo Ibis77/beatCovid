@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Let's Beat COVID!</title>
     <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <img id="image" src="./Images/testB/Image1.png" alt="Image1" />
+    <button autofocus onclick="countClicks()">BEAT COVID</button>
+
+    <p id="default-text">Let's beat COVID! Hit Space or Enter.</p>
+
+    <p id="counter"></p>
+
+    <p id="additional-text"></p>
+
     <script>
       var count = 0; // Global variable to store the click count
 
@@ -12,6 +23,8 @@
         // Get the counter element
         var counter = document.getElementById("counter");
         var defaultText = document.getElementById("default-text");
+        var image = document.getElementById("image");
+        var additionalText = document.getElementById("additional-text");
 
         // If this is the first click, hide the default text
         if (count === 0) {
@@ -23,6 +36,36 @@
 
         // Update the counter element with the new count
         counter.innerText = "You have beaten COVID " + count + " times!";
+
+        // Display additional text for specific click counts
+        if (count === 10) {
+          additionalText.innerText =
+            "Well done! 40 more clicks till a new image!";
+        } else if (count === 11) {
+          additionalText.innerText = "";
+        } else if (count === 20) {
+          additionalText.innerText =
+            "Well done! 30 more clicks till a new image!";
+        } else if (count === 21) {
+          additionalText.innerText = "";
+        } else if (count === 30) {
+          additionalText.innerText =
+            "Well done! 20 more clicks till a new image!";
+        } else if (count === 31) {
+          additionalText.innerText = "";
+        } else if (count === 40) {
+          additionalText.innerText =
+            "Well done! 10 more clicks till a new image!";
+        } else if (count === 41) {
+          additionalText.innerText = "";
+        }
+
+        // Check if the count is 50
+        if (count === 50) {
+          // Change the image source to Image2
+          image.src = "./Images/testB/Image2.png";
+          additionalText.innerText = ""; // Clear the additional text
+        }
       }
 
       function handleKeyPress(event) {
@@ -32,13 +75,5 @@
         }
       }
     </script>
-  </head>
-  <body>
-    <img src="./Images/testB/b1SmokeCool.png" alt="Image1" />
-    <button autofocus onclick="countClicks()">BEAT COVID</button>
-
-    <p id="default-text">Let's beat COVID! Hit Space or Enter.</p>
-
-    <p id="counter"></p>
   </body>
 </html>

@@ -1,9 +1,25 @@
-body {
+.image img {
+  max-width: 400px;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  text-align: center;
 }
 
-body img {
-  max-width: 400px;
+.button button {
+  padding: 40px;
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: orange;
+}
+
+.button .clicked button {
+  /* Styles for the button within .button div when clicked */
+  background-color: red;
 }

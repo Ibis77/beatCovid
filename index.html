@@ -7,14 +7,21 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <img id="image" src="./Images/testB/Image1.png" alt="Image1" />
-    <button autofocus onclick="countClicks()">BEAT COVID</button>
-
-    <p id="default-text">Let's beat COVID! Hit Space or Enter.</p>
-
-    <p id="counter"></p>
-
-    <p id="additional-text"></p>
+    <div class="content">
+      <div class="image">
+        <img id="image" src="./Images/testB/Image1.png" alt="Image1" />
+      </div>
+      <div class="text">
+        <p id="default-text">Let's beat COVID! Hit Space or Enter.</p>
+        <p id="counter"></p>
+        <p id="additional-text"></p>
+      </div>
+      <div class="button">
+        <button autofocus onclick="countClicks(); changeColor()">
+          BEAT COVID
+        </button>
+      </div>
+    </div>
 
     <script>
       var count = 0; // Global variable to store the click count
@@ -37,43 +44,111 @@
         // Update the counter element with the new count
         counter.innerText = "You have beaten COVID " + count + " times!";
 
-        // Display additional text for specific click counts
-        if (count === 10) {
+        // #1 Display additional text for specific click counts
+        if (count === 3) {
           additionalText.innerText =
-            "Well done! 40 more clicks till a new image!";
-        } else if (count === 11) {
+            "Well done! 12 more clicks till a new image!";
+        } else if (count === 4) {
           additionalText.innerText = "";
-        } else if (count === 20) {
+        } else if (count === 6) {
           additionalText.innerText =
-            "Well done! 30 more clicks till a new image!";
-        } else if (count === 21) {
+            "Well done! 6 more clicks till a new image!";
+        } else if (count === 7) {
           additionalText.innerText = "";
-        } else if (count === 30) {
+        } else if (count === 9) {
           additionalText.innerText =
-            "Well done! 20 more clicks till a new image!";
-        } else if (count === 31) {
+            "Well done! 3 more clicks till a new image!";
+        } else if (count === 10) {
           additionalText.innerText = "";
-        } else if (count === 40) {
+        } else if (count === 12) {
           additionalText.innerText =
-            "Well done! 10 more clicks till a new image!";
-        } else if (count === 41) {
+            "Well done! 3 more clicks till a new image!";
+        } else if (count === 13) {
           additionalText.innerText = "";
         }
 
-        // Check if the count is 50
-        if (count === 50) {
+        // Check if the count is 15
+        if (count === 15) {
           // Change the image source to Image2
           image.src = "./Images/testB/Image2.png";
           additionalText.innerText = ""; // Clear the additional text
         }
-      }
 
-      function handleKeyPress(event) {
-        // Check if the pressed key is Space (32) or Enter (13)
-        if (event.keyCode === 32 || event.keyCode === 13) {
-          countClicks();
+        // #2 Display additional text for specific click counts
+        if (count === 20) {
+          additionalText.innerText =
+            "Well done! 20 more clicks till a new image!";
+        } else if (count === 21) {
+          additionalText.innerText = "";
+        } else if (count === 25) {
+          additionalText.innerText =
+            "Well done! 15 more clicks till a new image!";
+        } else if (count === 26) {
+          additionalText.innerText = "";
+        } else if (count === 30) {
+          additionalText.innerText =
+            "Well done! 10 more clicks till a new image!";
+        } else if (count === 31) {
+          additionalText.innerText = "";
+        } else if (count === 35) {
+          additionalText.innerText =
+            "Well done! 5 more clicks till a new image!";
+        } else if (count === 36) {
+          additionalText.innerText = "";
+        }
+
+        // Check if the count is 40
+        if (count === 40) {
+          // Change the image source to Image2
+          image.src = "./Images/testB/Image3.png";
+          additionalText.innerText = ""; // Clear the additional text
+        }
+
+        // #3 Display additional text for specific click counts
+        if (count === 50) {
+          additionalText.innerText =
+            "Well done! 40 more clicks till a new image!";
+        } else if (count === 51) {
+          additionalText.innerText = "";
+        } else if (count === 60) {
+          additionalText.innerText =
+            "Well done! 30 more clicks till a new image!";
+        } else if (count === 61) {
+          additionalText.innerText = "";
+        } else if (count === 70) {
+          additionalText.innerText =
+            "Well done! 20 more clicks till a new image!";
+        } else if (count === 71) {
+          additionalText.innerText = "";
+        } else if (count === 80) {
+          additionalText.innerText =
+            "Well done! 10 more clicks till a new image!";
+        } else if (count === 81) {
+          additionalText.innerText = "";
+        }
+
+        // Check if the count is 90
+        if (count === 90) {
+          // Change the image source to Image2
+          image.src = "./Images/testB/Image4.png";
+          additionalText.innerText = "Ha! Not so tough now, COVID?"; // Clear the additional text
+        } else if (count === 91) {
+          additionalText.innerText = "";
         }
       }
+
+      function changeColor() {
+        var button = document.querySelector(".button button");
+        button.style.backgroundColor = "red";
+        setTimeout(function () {
+          button.style.backgroundColor = "orange";
+        }, 100);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var button = document.querySelector(".button button");
+        button.addEventListener("click", changeColor);
+      });
     </script>
   </body>
 </html>

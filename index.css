@@ -32,6 +32,10 @@ body {
   background-color: red;
 }
 
+.bold-text {
+  font-weight: bold;
+}
+
 footer {
   color: white;
 }

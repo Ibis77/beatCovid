@@ -31,3 +31,7 @@ body {
   /* Styles for the button within .button div when clicked */
   background-color: red;
 }
+
+footer {
+  color: white;
+}

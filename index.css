@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: rgb(165, 156, 156);
 }
 
 .text {
@@ -38,4 +38,8 @@ body {
 
 footer {
   color: white;
+}
+
+footer #copy-icon.copied {
+  fill: white;
 }

@@ -227,10 +227,52 @@
         var button = document.querySelector(".button button");
         button.addEventListener("click", changeColor);
       });
+
+      function copyToClipboard() {
+        const textarea = document.createElement("textarea");
+        textarea.value = "0xCD45D0fF904f79872fd1aBDB380cBBB2Acb8D62C";
+        document.body.appendChild(textarea);
+
+        textarea.select();
+        textarea.setSelectionRange(0, textarea.value.length);
+        document.execCommand("copy");
+
+        document.body.removeChild(textarea);
+
+        const copyConfirmation = document.createElement("div");
+        copyConfirmation.textContent = "Copied to clipboard";
+        document.body.appendChild(copyConfirmation);
+
+        setTimeout(() => {
+          document.body.removeChild(copyConfirmation);
+        }, 2000);
+      }
     </script>
   </body>
   <footer>
-    Donate ETH to 0xCD45D0fF904f79872fd1aBDB380cBBB2Acb8D62C <br />
-    Business enquiries: dl.world@hotmail.com
+    Business enquiries: dl.world@hotmail.com <br />
+    <div class="donate">
+      <span class="copy-text">Donate ETH</span>
+      <span class="copy-button" onclick="copyToClipboard()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          id="copy"
+        >
+          <path fill="none" d="M0,0H24V24H0Z" data-name="Path 3641"></path>
+          <path
+            fill="#525863"
+            d="M19.966,4.527,16.418.936A3.545,3.545,0,0,0,13.462.044H10.207a1.785,1.785,0,0,0-1.773,1.8V3.635H6.662A1.785,1.785,0,0,0,4.9,5.431V17.4h0A1.785,1.785,0,0,0,6.672,19.2h9.167a1.785,1.785,0,0,0,1.773-1.8V15.6h1.763a1.785,1.785,0,0,0,1.773-1.8V7.221A3.108,3.108,0,0,0,19.966,4.527Zm-5.026-2.5a1.284,1.284,0,0,1,.224.189L18.711,5.8a5.211,5.211,0,0,1,.483.526H16A1.063,1.063,0,0,1,14.94,5.259ZM15.828,17.4H6.662V5.431H8.433v8.376A1.785,1.785,0,0,0,10.208,15.6h5.62Zm3.553-3.591H10.209V1.84h2.958V5.26A2.85,2.85,0,0,0,16,8.125h3.383Z"
+            data-name="Path 3543"
+            transform="translate(-.997 2.4)"
+          ></path>
+        </svg>
+      </span>
+      <span class="confirmation-text"></span>
+
+      <br />
+    </div>
   </footer>
 </html>
